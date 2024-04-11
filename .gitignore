@@ -1,0 +1,11 @@
+# Ignore all .env files
+*.env
+
+# Ignore specific directory
+node_modules/
+
+# Ignore all files with a .log extension
+*.log
+
+# Ignore PyCharm project settings
+.idea/
