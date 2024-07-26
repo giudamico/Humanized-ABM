@@ -1,8 +1,6 @@
 import os
-
-from Agent import Agent, dynamic_conversation_memory, dynamic_conversation
-from BERT import *
-import pinecone
+from ConversationManager import ConversationManager
+from Agent import Agent
 from pinecone import Pinecone, ServerlessSpec
 
 # Initialize agents
@@ -35,5 +33,8 @@ test_path = 'test.txt'
 
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    dynamic_conversation_memory(agent_a, agent_b, initial_message_path, backstory, interactions = 10, init = pc)
+if __name__ == "__main__":
+    agent_a = Agent("aiden")
+    agent_b = Agent("kai")
+    manager = ConversationManager(agent_a, agent_b, initial_message_path, backstory)
+    manager.dynamic_conversation_memory()
